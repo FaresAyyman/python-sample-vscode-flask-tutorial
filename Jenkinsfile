@@ -1,6 +1,7 @@
 @Library('my-shared-lib') _
 
 node('Agent1') {
+    def docker = new DockerShared1(this)
     withCredentials([usernamePassword(
         credentialsId: 'docker-hub-creds',
         usernameVariable: 'USERNAME',
