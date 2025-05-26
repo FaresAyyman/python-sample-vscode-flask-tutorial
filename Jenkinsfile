@@ -9,15 +9,15 @@ node('Agent1') {
         passwordVariable: 'PASSWD'
     )]) {
         stage("Login Docker Hub") {
-            DockerShared1.login(USERNAME, PASSWD)
+            docker.login(USERNAME, PASSWD)
         }
     }
 
     stage("Build Docker Image") {
-        DockerShared1.buildPythonImage()
+        docker.buildPythonImage()
     }
 
     stage("Push Docker Image") {
-        DockerShared1.pushPythonImage()
+        docker.pushPythonImage()
     }
 }
