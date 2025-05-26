@@ -1,4 +1,5 @@
 @Library('my-shared-lib') _
+import org.iti..DockerShared1
 
 node('Agent1') {
     def docker = new DockerShared1(this)
